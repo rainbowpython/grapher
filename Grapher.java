@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import javax.script.*;
 
-//1
 public class Grapher {
   // right hand side of equation
   private String xSide;
