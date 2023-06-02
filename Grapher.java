@@ -8,9 +8,10 @@ public class Grapher {
   private String eqaution;
   private int yIntercept;
   private int xCoefficent;
-  private ScriptEngineManager mgr = new ScriptEngineManager(null);
-  private ScriptEngine engine = mgr.getEngineByName("JavaScript");
+  //private ScriptEngineManager mgr = new ScriptEngineManager(null);
+  //private ScriptEngine engine = mgr.getEngineByName("JavaScript");
   private ArrayList<Point> graph = new ArrayList<Point>();
+  private Display display;
 
   public Grapher(String newEquation) {
     new ScriptEngineManager().getEngineFactories();
