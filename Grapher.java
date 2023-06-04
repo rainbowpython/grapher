@@ -8,12 +8,11 @@ public class Grapher {
   private String eqaution;
   private int yIntercept;
   private int xCoefficent;
-  //private ScriptEngineManager mgr = new ScriptEngineManager(null);
-  //private ScriptEngine engine = mgr.getEngineByName("JavaScript");
+  private int slope;
   private ArrayList<Point> graph = new ArrayList<Point>();
   private Display display;
 
-  public Grapher(String newEquation) {
+  public Grapher {
     new ScriptEngineManager().getEngineFactories();
     eqaution = newEquation;
     createXSide();
@@ -30,17 +29,7 @@ public class Grapher {
   private void calculate() {
     for (int y = 10; y >= 0; y--) {
       for (int x = 0; x < 10; x++) {
-        String input = "" + (x * xCoefficent) + eqaution.substring(eqaution.indexOf(x) + 1);
-        try {
-          if (Integer.parseInt(engine.eval(input).toString()) == y) {
-            graph.add(new Point(x, y));
-          }
-        } catch (NumberFormatException | ScriptException e) {
-          if (e instanceof NullPointerException) {
-            System.out.println("ERROR: incorrect format");
-          }
-          System.out.println(graph);
-        }
+        
       }
     }
     System.out.println(graph);
