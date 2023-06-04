@@ -7,6 +7,7 @@ public class Grapher {
   private int yIntercept;
   private int xCoefficent;
   private int slope;
+  //TODO: make graph all points on an xy plane, then specify if point is a graphed point as a field
   private ArrayList<Point> graph = new ArrayList<Point>();
   private Display display;
   
