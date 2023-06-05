@@ -4,6 +4,7 @@ import javax.script.*;
 public class Grapher {
   // right hand side of equation
   private String xSide;
+
   private int yIntercept;
   private int xCoefficent;
   private int slope;
@@ -16,6 +17,7 @@ public class Grapher {
     this.slope = slope; 
     this.yIntercept = yIntercept;
     
+
     calculate();
 
   }
@@ -26,6 +28,7 @@ public class Grapher {
         if(x*slope+yIntercept == y){
           graph.add(new Point(x, y));
         }
+
       }
     }
     System.out.println(graph);

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 public class Display {
   int row;
   int height;
-  ArrayList points;
+  ArrayList<Point> points;
 
-  public Display(ArrayList newPoints) {
+  public Display(ArrayList<Point> newPoints) {
     points = newPoints;
     for (int y = 10; y >= 0; y--) {
       for (int x = 0; x < 10; x++) {
