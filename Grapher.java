@@ -5,16 +5,19 @@ public class Grapher {
   // right hand side of equation
   private String xSide;
 
-  private String eqaution;
-  private double yIntercept;
-  private double slope;
+  private int yIntercept;
+  private int xCoefficent;
+  private int slope;
+  //TODO: make graph all points on an xy plane, then specify if point is a graphed point as a field
   private ArrayList<Point> graph = new ArrayList<Point>();
   private Display display;
-
-  public Grapher(double newSlope, double newYIntercept) {
+  
+  public Grapher(double slope, double yIntercept) {
     new ScriptEngineManager().getEngineFactories();
-    slope = newSlope;
-    yIntercept = newYIntercept;
+    this.slope = slope; 
+    this.yIntercept = yIntercept;
+    
+
     calculate();
 
   }
@@ -22,7 +25,10 @@ public class Grapher {
   private void calculate() {
     for (int y = 10; y >= 0; y--) {
       for (int x = 0; x < 10; x++) {
-        
+        if(x*slope+yIntercept == y){
+          graph.add(new Point(x, y));
+        }
+
       }
     }
     System.out.println(graph);
