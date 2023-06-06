@@ -39,7 +39,7 @@ public class Grapher {
     display.graph();
   }
 
-  public Grapher(double newSlope, double newYIntercept, int xRange, int yRange, int xStart, int yStart) {
+  public Grapher(double newSlope, double newYIntercept, int xStart, int yStart, int xRange, int yRange) {
     slope = newSlope;
     yIntercept = newYIntercept;
     this.xRange = xRange;
@@ -49,7 +49,7 @@ public class Grapher {
     graph = new Point[xRange][yRange];
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
+    for (int y = yStart + yRange; y > yStart+1; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
         graph[yCount][xCount] = new Point(x, y);
@@ -65,16 +65,18 @@ public class Grapher {
   private void calculate() {
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y >= yStart; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
         if (x * slope + yIntercept == y) {
           graph[yCount][xCount].graph();
-          System.out.println("bing " + graph[yCount][xCount]);
-          xCount++;
+          //System.out.println("bing " + graph[yCount][xCount]);
+          
         }
-       yCount++; 
+        xCount++;
+        
       }
+      yCount++;
     }
   }
 
