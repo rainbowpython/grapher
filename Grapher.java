@@ -29,14 +29,14 @@ public class Grapher {
     for (int y = yStart + yRange; y > yStart; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
-        // graph.add(new Point(x, y));
         graph[yCount][xCount] = new Point(x, y);
         xCount++;
       }
       yCount++;
     }
     calculate();
-
+    Display display = new Display(graph);
+    display.graph();
   }
 
   private void calculate() {
@@ -47,9 +47,26 @@ public class Grapher {
         if (x * slope + yIntercept == y) {
           graph[yCount][xCount].graph();
         }
-        
+
       }
     }
-    
   }
+  
+  public int getXRange(){
+    return xRange;
+  }
+  
+  public int getYRange(){
+    return yRange;
+  }
+
+  public int getXStart(){
+    return xStart;
+  }
+
+  public int getYStart(){
+    return yStart;
+  }
+
+  
 }
