@@ -19,19 +19,19 @@ public class Display {
   }
 
   public void graph() {
-    for (int y = points.length; y >= 0; y--) {
-      for (int x = 0; x < points[y].length; x++) {
+    for (int y = points.length-1; y >= 0; y--) {
+      for (int x = 0; x < points[y].length-1; x++) {
 
         if (points[y][x].isGraphed()) {
-          System.out.println("x");
+          System.out.print("x");
         } else if (points[y][x].getX() == 0) {
 
-          System.out.println(points[y][x].getY());
+          System.out.print(points[y][x].getY());
         } else if (points[y][x].getY() == 0) {
 
-          System.out.println(points[y][x].getX());
+          System.out.print(points[y][x].getX());
         } else {
-          System.out.println(" ");
+          System.out.print(" ");
         }
       }
       System.out.println();
