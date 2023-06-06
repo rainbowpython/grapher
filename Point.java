@@ -1,8 +1,8 @@
 
 public class Point {
-  int x;
-  int y;
-  boolean isGraphed;
+  private int x;
+  private int y;
+  private boolean isGraphed;
   public Point(int x, int y) {
     this.x = x;
     this.y = y;
@@ -24,4 +24,9 @@ public class Point {
   public void graph(){
     isGraphed = true;
   }
+
+  public boolean getIsGraphed(){
+    return isGraphed;
+  }
+  
 }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 public class Display {
   int row;
   int height;
-  ArrayList<Point> points;
+  Point[][] points;
 
-  public Display(ArrayList<Point> newPoints) {
+  public Display(Point[][] newPoints) {
     points = newPoints;
     for (int y = 10; y >= 0; y--) {
       for (int x = 0; x < 10; x++) {
@@ -27,15 +27,10 @@ public class Display {
   }
 
   public void graph() {
-    for (int y = 10; y >= 0; y--) {
-      for (int x = 0; x < 10; x++) {
-        for (Point position : points) {
-          if(position.getX() == x || position.getY() == y){
-            System.out.println("X");
-          }
-          else{
-            System.out.println("O");
-          }
+    for (int y = points.length; y >= 0; y--) {
+      for (int x = 0; x < points[y].length; x++) {
+        if(points[y][x].getIsGraphed()){
+          
         }
       }
       System.out.println();

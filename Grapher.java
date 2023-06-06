@@ -8,39 +8,48 @@ public class Grapher {
   private String eqaution;
   private double yIntercept;
   private double slope;
-  private ArrayList<Point> graph = new ArrayList<Point>();
+  private Point[][] graph;
   private Display display;
 
   private int xRange;
   private int yRange;
   private int yStart;
   private int xStart;
+
   public Grapher(double newSlope, double newYIntercept) {
     slope = newSlope;
     yIntercept = newYIntercept;
     xRange = 20;
     yRange = 20;
     xStart = -10;
-    yStart = -10;    
-    for (int y = yStart+yRange; y >= yStart; y--) {
-      for (int x = xStart; x < xStart+xRange; x++) {
-        graph.add(new Point(x, y));
+    yStart = -10;
+    graph = new Point[xRange][yRange];
+    int yCount = 0;
+    int xCount = 0;
+    for (int y = yStart + yRange; y > yStart; y--) {
+      xCount = 0;
+      for (int x = xStart; x < xStart + xRange; x++) {
+        // graph.add(new Point(x, y));
+        graph[yCount][xCount] = new Point(x, y);
+        xCount++;
       }
+      yCount++;
     }
     calculate();
-  
+
   }
 
-  
-  
   private void calculate() {
-    for (int y = yStart+yRange; y >= yStart; y--) {
-      for (int x = xStart; x < xStart+xRange; x++) {
-        if(x*slope + yIntercept == y){
-          graph.get().graph();
+    int yCount = 0;
+    int xCount = 0;
+    for (int y = yStart + yRange; y >= yStart; y--) {
+      for (int x = xStart; x < xStart + xRange; x++) {
+        if (x * slope + yIntercept == y) {
+          graph[yCount][xCount].graph();
         }
+        
       }
     }
-    System.out.println(graph);
+    
   }
 }
