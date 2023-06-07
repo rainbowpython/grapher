@@ -17,31 +17,29 @@ public class Display {
       System.out.println();
     }
   }
-  
+
   public void graph() {
-    for (int y = 0; y < points.length-1; y++) {
-      for (int x = 0; x < points[y].length-1; x++) {
+    for (int y = 0; y < points.length - 1; y++) {
+      for (int x = 0; x < points[y].length - 1; x++) {
 
         if (points[y][x].isGraphed()) {
-          if(points[y][x].getY() == 0){
-            System.out.print(" x");
+          if (points[y][x].getY() == 0) {
+            // System.out.print("x");
+          } else {
+            System.out.print("x ");
           }
-          else{
-            System.out.print("x");
+
+        } else if (points[y][x].getY() == 0) {
+          if (points[y][x].getX() < 0) {
+
+             System.out.print(" " + (points[y][x].getX()*-1));
+          } else {
+            System.out.print(" " + (points[y][x].getX()));
           }
-          
-        }  else if (points[y][x].getY() == 0) {
-          if(points[y][x].getX() < 0){
-            System.out.print((points[y][x].getX()));
-          }
-          else{
-            System.out.print(" "+(points[y][x].getX()));
-          }
-        }
-        else if (points[y][x].getX() == 0) {
+        } else if (points[y][x].getX() == 0) {
+          //System.out.print("|");
           System.out.print(points[y][x].getY());
-        }
-        else {
+        } else {
           System.out.print("  ");
         }
       }

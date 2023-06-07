@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import javax.script.*;
 
 public class Grapher {
-  // right hand side of equation
-  private String xSide;
-
   private String eqaution;
   private double yIntercept;
   private double slope;
@@ -23,7 +20,7 @@ public class Grapher {
     yRange = 20;
     xStart = -10;
     yStart = -10;
-    graph = new Point[xRange][yRange];
+    graph = new Point[yRange][xRange];
     int yCount = 0;
     int xCount = 0;
     for (int y = yStart + yRange; y > yStart; y--) {
@@ -46,10 +43,10 @@ public class Grapher {
     this.yRange = xRange;
     this.xStart = xStart;
     this.yStart = xStart;
-    graph = new Point[xRange][yRange];
+    graph = new Point[yRange][xRange];
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart+1; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
         graph[yCount][xCount] = new Point(x, y);
