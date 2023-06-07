@@ -65,7 +65,7 @@ public class Grapher {
     for (int y = yStart + yRange; y > yStart; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
-        if (x * slope + yIntercept == y) {
+        if (x * slope + yIntercept+1 == y) {
           graph[yCount][xCount].graph();
           //System.out.println("bing " + graph[yCount][xCount]);
           
