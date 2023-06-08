@@ -27,18 +27,28 @@ public class Display {
           System.out.print(" x");
 
         } else if (points[y][x].getY() == 0) {
-          if (points[y][x].getX() < 0) {
-
-            System.out.print(" " + (points[y][x].getX() * -1));
-          } else {
-            System.out.print(" " + (points[y][x].getX()));
+          if(!ArgumentManager.isBlocks){
+            if (points[y][x].getX() < 0) {
+  
+              System.out.print(" " + (points[y][x].getX() * -1));
+            } else {
+              System.out.print(" " + (points[y][x].getX()));
+            }
+          }
+          else{
+            System.out.print("██");
           }
         } else if (points[y][x].getX() == 0) {
-          if (points[y][x].getY() < 0) {
-
-            System.out.print(" " + (points[y][x].getY() * -1));
-          } else {
-            System.out.print(" " + (points[y][x].getY()));
+          if(!ArgumentManager.isBlocks){
+            if (points[y][x].getY() < 0) {
+  
+              System.out.print(" " + (points[y][x].getY() * -1));
+            } else {
+              System.out.print(" " + (points[y][x].getY()));
+            }
+          }
+          else{
+            System.out.print("██");
           }
         } else {
           System.out.print("  ");

@@ -1,8 +1,6 @@
 import java.util.ArrayList;
-import javax.script.*;
 
-public class Grapher {
-  private String eqaution;
+public class LinearGrapher {
   private double yIntercept;
   private double slope;
   private Point[][] graph;
@@ -13,36 +11,17 @@ public class Grapher {
   private int yStart;
   private int xStart;
 
-  public Grapher(double newSlope, double newYIntercept) {
-    slope = newSlope;
-    yIntercept = newYIntercept;
-    xRange = 20;
-    yRange = 20;
-    xStart = -10;
-    yStart = -10;
-    graph = new Point[yRange][xRange];
-    int yCount = 0;
-    int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
-      xCount = 0;
-      for (int x = xStart; x < xStart + xRange; x++) {
-        graph[yCount][xCount] = new Point(x, y);
-        xCount++;
-      }
-      yCount++;
-    }
-    calculate();
-    Display display = new Display(graph);
-    display.graph();
+  public LinearGrapher(double newSlope, double newYIntercept) {
+    this(newSlope, newYIntercept, -5 ,-5 , 10, 10);
   }
 
-  public Grapher(double newSlope, double newYIntercept, int xStart, int yStart, int xRange, int yRange) {
+  public LinearGrapher(double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange) {
     slope = newSlope;
     yIntercept = newYIntercept;
-    this.xRange = xRange;
-    this.yRange = xRange;
+    this.xRange = newYRange+1;
+    this.yRange = newYRange+1;
     this.xStart = xStart;
-    this.yStart = xStart;
+    this.yStart = yStart;
     graph = new Point[yRange][xRange];
     int yCount = 0;
     int xCount = 0;
@@ -65,10 +44,9 @@ public class Grapher {
     for (int y = yStart + yRange; y > yStart; y--) {
       xCount = 0;
       for (int x = xStart; x < xStart + xRange; x++) {
-        if (x * slope + yIntercept+1 == y) {
+        if (x * slope + yIntercept == y) {
           graph[yCount][xCount].graph();
-          //System.out.println("bing " + graph[yCount][xCount]);
-          
+
         }
         xCount++;
         
