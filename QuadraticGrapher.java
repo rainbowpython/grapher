@@ -13,7 +13,7 @@ public class QuadraticGrapher
   
   public QuadraticGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept) 
   {
-    this(xPowerOf2Slope, newSlope, newYIntercept, -5 ,-5 , 10, 10);
+    this(xPowerOf2Slope, newSlope, newYIntercept, -10 ,-10 , 20, 20);
   }
   
   public QuadraticGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange)
