@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-public class LinearGrapher {
+public class LinearGrapher 
+{
   private double yIntercept;
   private double slope;
   private Point[][] graph;
@@ -11,23 +12,27 @@ public class LinearGrapher {
   private int yStart;
   private int xStart;
 
-  public LinearGrapher(double newSlope, double newYIntercept) {
-    this(newSlope, newYIntercept, -5 ,-5 , 10, 10);
+  public LinearGrapher(double newSlope, double newYIntercept) 
+  {
+    this(newSlope, newYIntercept, -10 ,-10 , 20, 20);
   }
 
-  public LinearGrapher(double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange) {
+  public LinearGrapher(double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange) 
+  {
     slope = newSlope;
     yIntercept = newYIntercept;
-    this.xRange = newYRange+1;
-    this.yRange = newYRange+1;
+    this.xRange = newYRange;
+    this.yRange = newYRange;
     this.xStart = xStart;
     this.yStart = yStart;
     graph = new Point[yRange][xRange];
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) 
+    {
       xCount = 0;
-      for (int x = xStart; x < xStart + xRange; x++) {
+      for (int x = xStart; x < xStart + xRange; x++) 
+      {
         graph[yCount][xCount] = new Point(x, y);
         xCount++;
       }
@@ -38,12 +43,15 @@ public class LinearGrapher {
     display.graph();
   }
 
-  private void calculate() {
+  private void calculate() 
+  {
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) 
+    {
       xCount = 0;
-      for (int x = xStart; x < xStart + xRange; x++) {
+      for (int x = xStart; x < xStart + xRange; x++) 
+      {
         if (x * slope + yIntercept == y) {
           graph[yCount][xCount].graph();
 
@@ -55,20 +63,23 @@ public class LinearGrapher {
     }
   }
 
-  public int getXRange() {
+  public int getXRange() 
+  {
     return xRange;
   }
 
-  public int getYRange() {
+  public int getYRange() 
+  {
     return yRange;
   }
 
-  public int getXStart() {
+  public int getXStart() 
+  {
     return xStart;
   }
 
-  public int getYStart() {
+  public int getYStart() 
+  {
     return yStart;
   }
-  
 }

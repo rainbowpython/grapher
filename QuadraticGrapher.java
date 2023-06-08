@@ -1,4 +1,5 @@
-public class QuadraticGrapher{
+public class QuadraticGrapher
+{
   double xPowerOf2Slope;
   private double yIntercept;
   private double slope;
@@ -10,11 +11,13 @@ public class QuadraticGrapher{
   private int yStart;
   private int xStart;
   
-  public LinearGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept) {
+  public QuadraticGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept) 
+  {
     this(xPowerOf2Slope, newSlope, newYIntercept, -5 ,-5 , 10, 10);
   }
   
-  public QuadraticGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange){
+  public QuadraticGrapher(double xPowerOf2Slope, double newSlope, double newYIntercept, int xStart, int yStart, int newXRange, int newYRange)
+  {
     slope = newSlope;
     yIntercept = newYIntercept;
     this.xPowerOf2Slope = xPowerOf2Slope;
@@ -25,9 +28,11 @@ public class QuadraticGrapher{
     graph = new Point[yRange][xRange];
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) 
+    {
       xCount = 0;
-      for (int x = xStart; x < xStart + xRange; x++) {
+      for (int x = xStart; x < xStart + xRange; x++) 
+      {
         graph[yCount][xCount] = new Point(x, y);
         xCount++;
       }
@@ -37,13 +42,18 @@ public class QuadraticGrapher{
     Display display = new Display(graph);
     display.graph();
   }
-  public void calculate(){
+  
+  public void calculate()
+  {
     int yCount = 0;
     int xCount = 0;
-    for (int y = yStart + yRange; y > yStart; y--) {
+    for (int y = yStart + yRange; y > yStart; y--) 
+    {
       xCount = 0;
-      for (int x = xStart; x < xStart + xRange; x++) {
-        if (xPowerOf2Slope*(x*x)+ x * slope + yIntercept == y) {
+      for (int x = xStart; x < xStart + xRange; x++) 
+      {
+        if (xPowerOf2Slope*(x*x)+ x * slope + yIntercept == y) 
+        {
           graph[yCount][xCount].graph();
         }
         xCount++;

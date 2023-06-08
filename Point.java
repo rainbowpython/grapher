@@ -1,31 +1,38 @@
-public class Point {
+public class Point 
+{
   private int x;
   private int y;
   private boolean isGraphed;
 
-  public Point(int x, int y) {
+  public Point(int x, int y) 
+  {
     this.x = x;
     this.y = y;
     isGraphed = false;
   }
 
-  public int getX() {
+  public int getX() 
+  {
     return x;
   }
 
-  public int getY() {
+  public int getY() 
+  {
     return y;
   }
 
-  public String toString() {
+  public String toString() 
+  {
     return "" + x + "" + y + "" + isGraphed;
   }
 
-  public void graph() {
+  public void graph() 
+  {
     isGraphed = true;
   }
 
-  public boolean isGraphed() {
+  public boolean isGraphed() 
+  {
     return isGraphed;
   }
 
